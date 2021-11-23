@@ -1,3 +1,0 @@
-# Bucket List
-
-### Java Backlog
