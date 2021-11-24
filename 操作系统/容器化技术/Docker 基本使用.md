@@ -99,6 +99,8 @@ docker rm <continer-name>
 docker container stop <container-name>
 # 查询容器运行情况
 docker container ps -al
+# 进入容器
+docker exec -it <container-name> /bin/bash
 ~~~
 
 #### docker run
