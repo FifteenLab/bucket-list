@@ -74,6 +74,8 @@ Command action
 
 ~~~
 
+
+
 ## 磁盘挂载
 
 编辑好分区表之后，就需要创建新的文件系统了。使用mkfs 命令格式化分区。格式化分区之前需要重启。
@@ -116,5 +118,29 @@ echo "/dev/sda2 /data ext4 default 0 0" >> /etc/fstab
 
 ~~~shell
 sudo umount /dev/sda2
+~~~
+
+### FAQ
+
+1、目录卸载失败
+
+~~~shell
+umount: /tmp/mondo.tmp.pI8wfh/mountpoint.8372: target is busy.
+~~~
+
+使用`lsof`命令查询占用情况
+
+~~~shell
+lsof | grep '/tmp/'
+~~~
+
+
+
+## 磁盘常用命令
+
+~~~shell
+lsblk
+fdisk -l
+df -h
 ~~~
 
