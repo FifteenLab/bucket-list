@@ -19,6 +19,8 @@ vagrant ssh
 vagrant destroy
 # 全局查看虚拟机状态
 vagrant global-status
+# 修改配置文件后，重新加载虚拟机
+vagrant reload
 ~~~
 
 #### vagrant box

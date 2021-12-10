@@ -21,7 +21,25 @@ git push
 git checkout <branch-name>
 # 代码合并
 git merge <branch-name>
+# 创建分支
+git branch <branch-name>
 ~~~
+
+#### git push
+
+~~~shell
+# 首次提交分支到远程
+git push --set-upstream origin <branch-name>
+~~~
+
+#### git checkout
+
+~~~shell
+# 创建新分支
+git checkout -b <branch-name>
+~~~
+
+
 
 #### git  merge
 
@@ -39,4 +57,3 @@ git merge dev1.0
 ~~~shell
 git merge develop --allow-unrelated-histories
 ~~~
-

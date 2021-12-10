@@ -14,7 +14,7 @@ systemctl restart firewalld
 # 设置开机启动
 systemctl enable firewalld
 # 查看是否开机启动
-systemctl is-enabled firewalld;echo
+systemctl is-enabled firewalld
 ~~~
 
 **操作命令**
