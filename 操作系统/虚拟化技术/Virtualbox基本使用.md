@@ -1,3 +1,11 @@
+## 简介
+
+官方文档：
+
+https://www.virtualbox.org/manual/UserManual.html
+
+## 基本使用
+
 ### 安装扩展包
 
 1、下载扩展包
@@ -30,7 +38,7 @@ VBoxManage list extpacks
 VBoxManage extpack uninstall "Oracle VM VirtualBox Extension Pack"
 ~~~
 
-### 开启远程桌面
+### 设置远程桌面
 
 1、查看虚拟机列表，找到uuid 或者 vm-name
 
@@ -38,23 +46,25 @@ VBoxManage extpack uninstall "Oracle VM VirtualBox Extension Pack"
 VBoxManage list vms
 ~~~
 
-2、配置VRDE监听端口
+2、配置VRDE
 
 ~~~shell
-# 开机情况下
-VBoxManage controlvm bf904f4d-6d4d-4729-a8e2-e6815c9c3bb3 vrdeport 3390
+# 配置监听端口--开机情况下
+VBoxManage controlvm <uuid|vmname> vrdeport 3390
 # 关机情况下
-VBoxManage modifyvm c3ae2198-6004-4b4a-8181-487774bcd170 --vrdeport 3390
+VBoxManage modifyvm <uuid|vmname> --vrdeport 3390
+# 设置认证类型
+VBoxManage modifyvm <uuid|vmname> --vrdeauthtype null
 ~~~
 
 3、启动VRDE
 
 ~~~shell
 # 开机情况下
-VBoxManage controlvm edff54c5-46e9-4539-bbee-0f1974bc05d5 vrde on
+VBoxManage controlvm <uuid|vmname> vrde on
 
 # 关机情况下
-VBoxManage.exe modifyvm c3ae2198-6004-4b4a-8181-487774bcd170 --vrde on
+VBoxManage modifyvm <uuid|vmname> --vrde on
 ~~~
 
 4、修改防火墙，放开对应端口
@@ -64,6 +74,26 @@ firewall-cmd --zone=public --add-port=3390/tcp
 ~~~
 
 5、使用Window 远程桌面，连接宿主机IP+端口
+
+### 查看虚拟机
+
+~~~shell
+# 查看虚拟机列表
+VBoxManage list vms
+# 查看运行列表
+VBoxManage list runningvms
+# 查看虚拟机详情
+VBoxManage showvminfo <uuid|vmname>
+~~~
+
+### 启停虚拟机
+
+~~~shell
+# 关机
+VBoxManage controlvm <uuid|vmname> poweroff
+# 开机
+VBoxManage startvm <uuid|vmname> --type headless
+~~~
 
 
 
