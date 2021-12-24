@@ -4,7 +4,7 @@
 
 https://www.virtualbox.org/manual/UserManual.html
 
-## 基本使用
+## 安装
 
 ### 安装扩展包
 
@@ -37,6 +37,10 @@ VBoxManage list extpacks
 ~~~shell
 VBoxManage extpack uninstall "Oracle VM VirtualBox Extension Pack"
 ~~~
+
+### 
+
+## 基本使用
 
 ### 设置远程桌面
 
@@ -94,6 +98,25 @@ VBoxManage controlvm <uuid|vmname> poweroff
 # 开机
 VBoxManage startvm <uuid|vmname> --type headless
 ~~~
+
+### 挂载媒介
+
+~~~shell
+# 添加控制器（IED、STAT等）
+VBoxManage storagectl <uuid|vmname> --name IDE --add ide --controller PIIX4 --bootable on
+
+# 挂载ISO镜像
+VBoxManage storageattach <uuid|vmname> --storagectl "IDE" --port 0 --device 0 --type dvddrive --medium <ISO filename>
+# 移除ISO镜像
+VBoxManage storageattach <uuid|vmname> --storagectl "IDE" --port 0 --device 0 --type dvddrive --medium none
+
+# 挂载磁盘
+VBoxManage storageattach <uuid|vmname> --storagectl "SATA" --port 0 --device 0 --type hdd --medium <hd filename>
+# 移除磁盘
+VBoxManage storageattach <uuid|vmname> --storagectl "SATA" --port 0 --device 0 --type hdd --medium none
+~~~
+
+
 
 
 
