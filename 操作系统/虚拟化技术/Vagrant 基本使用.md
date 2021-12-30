@@ -1,3 +1,5 @@
+
+
 ### Vagrant 常用命令
 
 ~~~shell
@@ -30,4 +32,8 @@ vagrant reload
 > list：查看本地镜像列表
 >
 > remove：删除本地镜像
+
+
+
+### Vagrantfile 配置文件
 

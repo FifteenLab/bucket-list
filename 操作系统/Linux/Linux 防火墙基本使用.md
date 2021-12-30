@@ -42,3 +42,11 @@ firewall-cmd --zone=public --add-port=22/tcp --permanent
 >
 > -permanent：永久生效，没有此参数重启后失效
 
+#### 关闭端口
+
+~~~shell
+firewall-cmd --zone= public --remove-port=22/tcp --permanent
+~~~
+
+
+

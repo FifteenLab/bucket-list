@@ -9,6 +9,12 @@ passwd <username>
 usermod -G <用户组> <用户名>
 ~~~
 
+### 修改Root密码
+
+~~~ shell
+sudo passwd root
+~~~
+
 
 
 ### Wheel用户组
