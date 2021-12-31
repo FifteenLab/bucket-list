@@ -1,4 +1,10 @@
-### Centos 安装Nginx
+## 环境说明
+
+系统版本：Centos 7.9.2009  3.10.0-1127.el7.x86_64
+
+Nginx版本：
+
+## 安装配置
 
 ~~~shell
 sudo yum install yum-utils
